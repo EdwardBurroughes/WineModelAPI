@@ -1,2 +1,2 @@
 # WineModelAPI
-Wine rating classifier API deployed on heroku 
+Wine rating classifier API deployed on heroku
