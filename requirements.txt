@@ -19,4 +19,3 @@ CurrencyConverter==0.15
 prometheus-flask-exporter==0.18.1
 Flask==1.1.1
 Flask-Cors==3.0.10
-gunincorn
