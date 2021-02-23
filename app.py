@@ -3,12 +3,13 @@ from flask import request, escape
 import pandas as pd
 import joblib
 from currency_converter import CurrencyConverter
+from WinePredictModel.load_model import load_models
 app = flask.Flask(__name__)
 
 
 @app.route('/winemodel',methods=['GET','POST'])
 def predict_wine_rating():
-    country = request.args.get('country').lower().title()
+    country = request.args.get('country')
     description = request.args.get('description','wine')
     # conversion rates - create a drop down with EUR and GBR
     conversion_factor = request.args.get('conversion','EUR')
@@ -33,8 +34,7 @@ def predict_wine_rating():
                 variety=[variety],
                 winery=[winery]
                 ))
-    feat = joblib.load("model/feature_eng.joblib")
-    model = joblib.load("model/model.joblib")
+    feat, model = load_models()
     feat_eng_x = feat.transform(df)
     prediction = model.predict(feat_eng_x)
     return {'prediction':str(prediction[0])}
