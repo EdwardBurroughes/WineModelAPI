@@ -9,7 +9,7 @@ app = flask.Flask(__name__)
 
 @app.route('/winemodel',methods=['GET','POST'])
 def predict_wine_rating():
-    country = request.args.get('country').lower().title()
+    country = request.args.get('country')
     description = request.args.get('description','wine')
     # conversion rates - create a drop down with EUR and GBR
     conversion_factor = request.args.get('conversion','EUR')
