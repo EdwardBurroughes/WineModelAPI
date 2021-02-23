@@ -3,7 +3,6 @@ from flask import request, escape
 import pandas as pd
 import joblib
 from currency_converter import CurrencyConverter
-from WinePredictModel.load_model import load_models
 app = flask.Flask(__name__)
 
 
@@ -34,7 +33,8 @@ def predict_wine_rating():
                 variety=[variety],
                 winery=[winery]
                 ))
-    feat, model = load_models()
+    feat = model.load('model/feature_eng.joblib')
+    model = model.load('model/model.joblib')
     feat_eng_x = feat.transform(df)
     prediction = model.predict(feat_eng_x)
     return {'prediction':str(prediction[0])}
