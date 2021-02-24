@@ -37,7 +37,7 @@ def predict_wine_rating():
                 winery=[winery]
                 ))
     print('feature engineering')
-    feat = joblib.load('model/feature_engineering.joblib')
+    feat = joblib.load('model/feature_eng.joblib')
     print('model')
     model = joblib.load('model/model.joblib')
     print('feature engineering')
