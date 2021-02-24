@@ -3,6 +3,7 @@ from flask import request, escape
 import pandas as pd
 import joblib
 from currency_converter import CurrencyConverter
+import winemodel
 app = flask.Flask(__name__)
 
 
