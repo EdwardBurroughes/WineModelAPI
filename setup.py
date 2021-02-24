@@ -8,9 +8,9 @@ with open('requirements.txt') as f:
 requirements = [x.strip() for x in content if 'git+' not in x]
 
 
-setup(name='wine_predict_model',
+setup(name='wine_model_api',
       version="1.0",
-      description="Wine Predict Model",
+      description="Wine Model API",
       packages=find_packages(),
       test_suite = 'tests',
       # include_package_data: to install data from MANIFEST.in
