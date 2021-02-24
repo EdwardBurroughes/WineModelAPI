@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 requirements = [x.strip() for x in content if 'git+' not in x]
 
 
-setup(name='wine_model_api',
+setup(name='winemodelapi',
       version="1.0",
       description="Wine Model API",
       packages=find_packages(),
