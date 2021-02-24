@@ -36,9 +36,13 @@ def predict_wine_rating():
                 variety=[variety],
                 winery=[winery]
                 ))
+    print('feature engineering')
     feat = joblib.load('model/feature_eng.joblib')
+    print('model')
     model = joblib.load('model/model.joblib')
+    print('feature engineering')
     feat_eng_x = feat.transform(df)
+    print('model')
     prediction = model.predict(feat_eng_x)
     return {'prediction':str(prediction[0])}
 
