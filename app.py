@@ -5,8 +5,11 @@ import joblib
 from currency_converter import CurrencyConverter
 app = flask.Flask(__name__)
 
+@app.route('/')
+def home():
+    return "test"
 
-@app.route('/winemodel',methods=['GET','POST'])
+@app.route('/predict',methods=['GET','POST'])
 def predict_wine_rating():
     country = request.args.get('country','Spain')
     description = request.args.get('description','wine')
