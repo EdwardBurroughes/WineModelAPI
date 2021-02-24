@@ -1,7 +1,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-#TODO add all features whether to inlcude
+# add all features whether to inlcude
 
 with open('requirements.txt') as f:
     content = f.readlines()

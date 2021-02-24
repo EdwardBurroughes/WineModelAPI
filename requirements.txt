@@ -21,4 +21,3 @@ Flask==1.1.1
 Flask-Cors==3.0.10
 gunicorn==20.0.4
 scikit-learn==0.23.1
-winemodel @ git+git://github.com/jbmarcelino1/WinePredictor@01b7dcc45337bb2935d9
