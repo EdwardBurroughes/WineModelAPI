@@ -3,7 +3,6 @@ from flask import request, escape
 import pandas as pd
 import joblib
 from currency_converter import CurrencyConverter
-import winemodel
 app = flask.Flask(__name__)
 
 
@@ -39,17 +38,11 @@ def predict_wine_rating():
                 winery=[winery]
                 ))
     print('feature engineering')
-    
-    # client = storage.Client()
-    # # bucket = client.bucket(BUCKET_NAME)
-    # filepath_feat = "gs://{}/{}".format(BUCKET_NAME,'model/feature_eng.joblib')
-    # filepath_model = "gs://{}/{}".format(BUCKET_NAME,'model/model.joblib')
     feat = joblib.load('model/feature_eng.joblib')
     print('model')
     model = joblib.load('model/model.joblib')
-    print('feature engineering')
     feat_eng_x = feat.transform(df)
-    print('model')
+    
     prediction = model.predict(feat_eng_x)
     return {'prediction':str(prediction[0])}
 
