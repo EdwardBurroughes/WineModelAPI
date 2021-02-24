@@ -14,6 +14,6 @@ setup(name='wine_predict_model',
       packages=find_packages(),
       test_suite = 'tests',
       # include_package_data: to install data from MANIFEST.in
-      include_package_data=True,
+    #   include_package_data=True,
       install_requires=requirements,
       zip_safe=False)
